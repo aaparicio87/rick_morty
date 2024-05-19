@@ -2,9 +2,9 @@ import React from 'react'
 import { FormControl, Input, InputField } from '@gluestack-ui/themed'
 import { Text } from '@gluestack-ui/themed'
 import { Image } from 'expo-image';
-import { AuthLayout } from '../../../components';
 import styles from './styles'
 import { LoginScreenProps } from '../../../navigation';
+import { AuthLayout } from '../../../layout';
 
 type TProps = LoginScreenProps
 

@@ -13,7 +13,7 @@ export const MainNavigation = () => {
   return (
     <RootStack.Navigator>
       {
-        false ?
+        true ?
           (
             <>
               <RootStack.Screen
@@ -36,6 +36,9 @@ export const MainNavigation = () => {
               <RootStack.Screen
                 name="BottomTab"
                 component={TabNavigation}
+                options={{
+                  headerShown: false
+                }}
               />
             </>
           )

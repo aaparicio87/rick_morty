@@ -7,6 +7,7 @@ type RootStackParamList = {
 type BottomTabNavigatorParamList = {
   Home: undefined;
   Episodes: undefined;
+  Menu: undefined
 };
 
 interface UserResponse {

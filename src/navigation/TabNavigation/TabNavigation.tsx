@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { EpisodesScreen, HomeScreen } from "../../screens/Home";
+import { EpisodesScreen, HomeScreen, MenuScreen } from "../../screens/Home";
 
 type PropIcontab = {
     color: string,
@@ -24,6 +24,9 @@ export const TabNavigation = () => {
         } else if (route.name === 'Episodes') {
             iconName = focused ? 'easel' : 'easel-outline';
         }
+        else if (route.name === 'Menu') {
+            iconName = focused ? 'menu' : 'menu-outline';
+        }
 
         // You can return any component that you like here!
         return <Ionicons name={iconName} size={size} color={color} />;
@@ -39,11 +42,17 @@ export const TabNavigation = () => {
             <Tab.Screen
                 name="Home"
                 component={HomeScreen}
+                options={{ title: 'Characters' }}
             />
 
             <Tab.Screen
                 name="Episodes"
                 component={EpisodesScreen}
+            />
+
+            <Tab.Screen
+                name="Menu"
+                component={MenuScreen}
             />
 
 

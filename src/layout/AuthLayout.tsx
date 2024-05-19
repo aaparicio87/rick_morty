@@ -7,7 +7,7 @@ import {
     SafeAreaView,
     Text, VStack
 } from "@gluestack-ui/themed"
-import { CustomLink } from "../CustomLink/CustomLink"
+import { CustomLink } from "../components/CustomLink/CustomLink"
 
 type TProps = React.PropsWithChildren & {
     buttonText: string

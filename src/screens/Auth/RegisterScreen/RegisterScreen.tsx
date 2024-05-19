@@ -4,8 +4,8 @@ import {
     InputField,
     Text
 } from '@gluestack-ui/themed'
-import { AuthLayout } from '../../../components'
 import { SignUpScreenProps } from '../../../navigation'
+import { AuthLayout } from '../../../layout'
 
 type TProps = SignUpScreenProps
 

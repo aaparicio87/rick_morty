@@ -1,12 +1,13 @@
 
 import { useCallback, useEffect, useRef } from 'react'
-import { GenericFlatList, HomeLayout } from '../../../components'
+import { GenericFlatList } from '../../../components'
 import { useGetAllCharactersQuery, useLazyGetAllCharactersQuery } from '../../../services/rick_morty'
 import CharacterItem from './components/CharacterItemList/CharacterItem'
 import { ActivityIndicator, ListRenderItem } from 'react-native'
 import { View } from '@gluestack-ui/themed'
 import { useAppDispatch, useTypedSelector } from '../../../hooks/store'
 import { selectRickMorty, setCharacters, setInfoCharacters } from '../../../state/features/rick_morty/rickMortySlice'
+import { HomeLayout } from '../../../layout'
 
 
 export const HomeScreen = () => {

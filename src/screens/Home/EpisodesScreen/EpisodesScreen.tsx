@@ -1,10 +1,11 @@
-import { GenericFlatList, HomeLayout } from "../../../components"
+import { GenericFlatList } from "../../../components"
 import { useGetAllEpisodesQuery, useLazyGetAllEpisodesQuery } from "../../../services/rick_morty"
 import { ActivityIndicator, ListRenderItem } from "react-native"
 import { useCallback, useEffect, useRef } from "react"
 import EpisodeItemList from "./components/EpisodeItemList/EpisodeItemList"
 import { useAppDispatch, useTypedSelector } from "../../../hooks/store"
 import { selectRickMorty, setEpisodes, setInfoEpisodes } from "../../../state/features/rick_morty/rickMortySlice"
+import { HomeLayout } from "../../../layout"
 
 
 export const EpisodesScreen = () => {
