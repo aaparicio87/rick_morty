@@ -1,11 +1,67 @@
-import { Text, View } from '@gluestack-ui/themed'
-import React from 'react'
+import {
+    FormControl,
+    Input,
+    InputField,
+    Text
+} from '@gluestack-ui/themed'
+import { AuthLayout } from '../../../components'
+import { SignUpScreenProps } from '../../../navigation'
 
+type TProps = SignUpScreenProps
 
-export const RegisterScreen = () => {
+export const RegisterScreen = ({ navigation }: TProps) => {
     return (
-        <View>
-            <Text>RegisterScreen</Text>
-        </View>
+        <AuthLayout
+            sigIn={false}
+            buttonText='Sign up'
+            handleNavigate={() => navigation.navigate('Login')}
+            handlePressButton={() => { }}
+        >
+            <FormControl>
+                <FormControl.Label>
+                    <Text>E-mail</Text  >
+                </FormControl.Label>
+                <Input
+                    variant="outline"
+                    size="md"
+                    isDisabled={false}
+                    isInvalid={false}
+                    isReadOnly={false}
+                >
+                    <InputField placeholder="Enter e-mail" />
+                </Input>
+            </FormControl>
+
+            <FormControl>
+                <FormControl.Label>
+                    <Text>Password</Text>
+                </FormControl.Label>
+                <Input
+                    variant="outline"
+                    size="md"
+                    isDisabled={false}
+                    isInvalid={false}
+                    isReadOnly={false}
+
+                >
+                    <InputField placeholder="Enter password" type='password' />
+                </Input>
+            </FormControl>
+            <FormControl>
+                <FormControl.Label>
+                    <Text>Confirm Password</Text>
+                </FormControl.Label>
+                <Input
+                    variant="outline"
+                    size="md"
+                    isDisabled={false}
+                    isInvalid={false}
+                    isReadOnly={false}
+
+                >
+                    <InputField placeholder="Enter password" type='password' />
+                </Input>
+            </FormControl>
+        </AuthLayout>
     )
 }

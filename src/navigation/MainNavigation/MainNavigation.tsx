@@ -1,25 +1,45 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { LoginScreen, RegisterScreen } from '../../screens/Auth';
 import { TabNavigation } from '../TabNavigation/TabNavigation';
+import { useAuth } from '../../hooks/useAuth';
 
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
 
 export const MainNavigation = () => {
+
+  const auth = useAuth()
+
   return (
     <RootStack.Navigator>
-      <RootStack.Screen
-        name='Login'
-        component={LoginScreen}
-      />
-      <RootStack.Screen
-        name='SignUp'
-        component={RegisterScreen}
-      />
-      <RootStack.Screen
-        name="BottomTab"
-        component={TabNavigation}
-      />
+      {
+        false ?
+          (
+            <>
+              <RootStack.Screen
+                name='Login'
+                options={{
+                  headerShown: false
+                }}
+                component={LoginScreen}
+              />
+              <RootStack.Screen
+                name='SignUp'
+                options={{
+                  headerShown: false
+                }}
+                component={RegisterScreen}
+              />
+            </>
+          ) : (
+            <>
+              <RootStack.Screen
+                name="BottomTab"
+                component={TabNavigation}
+              />
+            </>
+          )
+      }
     </RootStack.Navigator>
   )
 }

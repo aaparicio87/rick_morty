@@ -1,10 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit'
+import authReducer from './features/auth/authSlice'
+import rickMortyReducer from './features/rick_morty/rickMortySlice'
+import { rickMortyApi } from '../services/rick_morty'
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    auth: authReducer,
+    rick_morty: rickMortyReducer,
+    [rickMortyApi.reducerPath]: rickMortyApi.reducer,
+  },
+
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(rickMortyApi.middleware),
 })
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch
