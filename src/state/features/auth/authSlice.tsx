@@ -21,10 +21,11 @@ const slice = createSlice({
         ) => {
             state.token = token
         },
+        clearAuthState: () => INITIAL_STATE
     },
 })
 
-export const { setCredentials } = slice.actions
+export const { setCredentials, clearAuthState } = slice.actions
 
 export default slice.reducer
 

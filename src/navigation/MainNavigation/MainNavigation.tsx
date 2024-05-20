@@ -13,7 +13,7 @@ export const MainNavigation = () => {
   return (
     <RootStack.Navigator>
       {
-        true ?
+        auth.token === null ?
           (
             <>
               <RootStack.Screen
